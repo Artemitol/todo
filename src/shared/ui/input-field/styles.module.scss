@@ -1,0 +1,12 @@
+.input {
+    display: flex;
+    flex-direction: row;
+    justify-self: start;
+    align-content: center;
+    border: var(--border);
+    border-radius: var(--border-radius);
+
+    &::placeholder {
+        color: var(--color-placeholder);
+    }
+}
