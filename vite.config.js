@@ -9,6 +9,12 @@ export default defineConfig({
     alias: {
       '@': resolve(__dirname, 'src'),
       '@scss': resolve(__dirname, 'src/shared/scss-properties'),
+      '@app': resolve(__dirname, 'src/app'),
+      '@pages': resolve(__dirname, 'src/pages'),
+      '@widgets': resolve(__dirname, 'src/widgets'),
+      '@entities': resolve(__dirname, 'src/entities'),
+      '@features': resolve(__dirname, 'src/features'),
+      '@shared': resolve(__dirname, 'src/shared'),
     },
   },  
   css: {

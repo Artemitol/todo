@@ -23,4 +23,4 @@ I got a few steps of programming:
 ## TODO
 1. Add new media queries syntax to the template
 2. Add theme togler
-3. Add 
+3. Add widgets slice to template repo
