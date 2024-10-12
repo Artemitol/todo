@@ -6,7 +6,6 @@ export default function HomePage() {
         <>
             <Header />
             <Main>
-                {/*  */}
             </Main>
             <footer className="footer"></footer>
         </>

@@ -1,4 +1,4 @@
-import classes from  "./styles.module.scss"
+import classes from  "./input-field.module.scss"
 
 
 export default function Input() {

@@ -1,0 +1,9 @@
+.button {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    border-radius: var(--border-radius);
+    background-color: var(--color-accent);
+}
