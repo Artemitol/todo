@@ -1,8 +1,13 @@
 import classes from "./task.module.scss"
-import { useState } from "react"
+import { ReactNode, useState } from "react"
+
+interface TaskProps {
+    name: string,
+    children?: ReactNode
+}
 
 
-export function Task(props) {
+export function Task(props: TaskProps) {
     const [data, setData] = useState({
         name: props.name || "Task name",
         // Can be "Completed"
@@ -30,4 +35,4 @@ export function Task(props) {
             </div>
         </div>
     )
-}
+}``
