@@ -15,9 +15,29 @@ This project created as basic todo app to train fsd design with react
 I got a few steps of programming:
 1. Create components architecture
 2. Make components usable, add logic for tasks
-3. Add drag`n grop effect for tasks
-4. Add color theme togler
-5. Add node backend
+3. Refactor Js into Typescrypt
+4. Add drag`n grop effect for tasks
+5. Add color theme togler
+6. Add node backend
+
+## During the project 
+### Problems 
+* Aliases was not working with vs code links
+> I found solution, now my project contains jsconfig.json file
+* I have big problems with spliting something in fsd methodology. Mostly it is a features VS entities VS widgets
+> Practice solve any problem
+* Tyred facing stupid js problems
+> At this moment started learning Typescript 
+
+### New knowledges in different technologies
+* Aliasses support in intelisense
+* Folowing aliases link in vs code
+* Js config file and alieases support in this file
+* Typescript (finally)
+* FSD (Feature-Sliced-Design)
+* Improved import / export skills
+* Find new cool features with index files
+* Now i know more about linters (mostly speaking about Eslint)
 
 
 ## TODO
