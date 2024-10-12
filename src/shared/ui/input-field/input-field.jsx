@@ -1,8 +1,8 @@
 import classes from  "./input-field.module.scss"
 
 
-export default function Input() {
+export function Input(props) {
     return (
-        <input className={classes.input} type="text" />
+        <input className={classes.input} type="text" placeholder={props.placeholder} />
     )
 }

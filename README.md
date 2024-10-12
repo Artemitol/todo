@@ -24,3 +24,5 @@ I got a few steps of programming:
 1. Add new media queries syntax to the template
 2. Add theme togler
 3. Add widgets slice to template repo
+4. Add jsconfig to the template repo
+5. fix paths (again XD)

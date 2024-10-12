@@ -1,0 +1,14 @@
+.homePage {
+    height: 100%;
+    width: 100%;
+}
+
+.background {
+    left: 0;
+    top: 0;
+    position: absolute;
+    width: 100dvw;
+    height: 100dvh;
+    z-index: -100;
+    background-color: var(--color-background);
+}

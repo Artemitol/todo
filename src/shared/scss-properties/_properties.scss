@@ -1,12 +1,11 @@
 #root {
-    width: 100%;
-    height: 100dvh;
-
     // COLOR
     --color-background: #0D0714;
     --color-background-alt: #15101C;
+    --color-main: #3E1671;
     --color-accent: #9E78CF;
     --color-text: #9E78CF;
+    --color-text-main: #FFFFFF;
     --color-ui: #3E1671;
     --color-placeholder: #777777;
     
@@ -29,12 +28,15 @@
     --font-size: 16px;
 
     // DECORATIONS
-    --border: 1px solid var(--color-dark);
+    --border: 1px solid var(--color-main);
+    --border-active: 1px solid var(--color-accent);
     --box-shadow: 1 1 var(--color-dark);
     --border-radius: 10px;
 
     // ANIMATIONS 
     --transition-duration: 0.2s;
+    --transition-duration-fast: 0.1s;
+
 
     // MEDIA 
     // @include tablet {  } 

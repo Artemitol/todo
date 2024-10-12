@@ -1,12 +1,12 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { HomePage } from "@pages";
+import { Homepage } from "@pages/home-page";
 import "./index.scss"
 
-export default function App() {
+export function App() {
     return (
         <BrowserRouter>
             <Routes>
-                <Route path={"/"} element={<HomePage />} />
+                <Route path={"/"} element={<Homepage />} />
             </Routes>
         </BrowserRouter>
     )
