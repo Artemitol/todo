@@ -12,7 +12,7 @@
     }
 }
 
-@mixin hiden {
+@mixin hidden {
     position: absolute;
     width: 1px;
     height: 1px;
@@ -23,6 +23,12 @@
     clip-path: inset(100%);
     clip: rect(0 0 0 0);
     overflow: hidden;
+}
+
+@mixin centered {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 @function px-to-rem($value) {
