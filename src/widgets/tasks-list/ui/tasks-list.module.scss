@@ -1,8 +1,14 @@
 .tasksList {
     display: grid;
     grid-template-columns: repeat(var(--tasks-columns-amount), 1fr);
+    grid-template-rows: repeat(var(--tasks-max-rows-amount), auto);
     gap: var(--tasks-gap);
+    overflow: hidden;
     width: 100%;
+
+    div:nth-child(n+#{$tasks-max-rows-amount}) {
+        display: none;
+    }
 }
 
 .container {

@@ -16,7 +16,7 @@ export default defineConfig(({mode}) => {
         plugins: [react()],
         resolve: {
             alias: {
-                "@scss": path.resolve("src/shared/scss-properties"),
+                "@scss": path.resolve("src/shared/scss"),
                 "@app": path.resolve("src/app"),
                 "@pages": path.resolve("src/pages"),
                 "@widgets": path.resolve("src/widgets"),
@@ -31,6 +31,7 @@ export default defineConfig(({mode}) => {
                     additionalData: `
                         @import "@scss/_mixins.scss";
                         @import "@scss/_media.scss";
+                        @import "@scss/_scss-properties.scss";
                     `,
                 },
             },

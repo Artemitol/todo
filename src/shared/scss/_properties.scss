@@ -21,6 +21,7 @@
 
     // IMPORTANT THINGS
     --tasks-columns-amount: 1;
+    --tasks-max-rows-amount: #{$tasks-max-rows-amount};
 
     // GAPS
     --tasks-gap: 16px;
