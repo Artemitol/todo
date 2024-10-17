@@ -1,0 +1,11 @@
+.removeButton {
+    color: var(--color-main);
+    background: transparent;
+    outline: none;
+    border: none;
+
+    @include hover {
+        transition-duration: var(--transition-duration-fast);
+        color: var(--color-text);
+    }
+}

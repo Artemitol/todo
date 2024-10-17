@@ -1,7 +1,7 @@
 import classes from "./button.module.scss"
 
 
-export function Button(props) {
+export function Button() {
     return (
         <button className={classes.button}>
             <svg
@@ -16,8 +16,6 @@ export function Button(props) {
                     fill="white"
                 />
             </svg>
-
-            {props.value}
         </button>
     )
 }

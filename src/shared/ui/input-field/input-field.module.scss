@@ -8,6 +8,7 @@
 
     &::placeholder {
         color: var(--color-placeholder);
+        user-select: none;
     }
 
     &:focus-visible {

@@ -1,0 +1,1 @@
+export { Trashcan } from "./trashcan"

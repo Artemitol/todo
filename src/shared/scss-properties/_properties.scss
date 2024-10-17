@@ -1,4 +1,4 @@
-#root {
+:root {
     // COLOR
     --color-background: #0D0714;
     --color-background-alt: #15101C;
@@ -19,6 +19,13 @@
     --h6-font-size: 20px;
     --p-font-size: 18px;
 
+    // IMPORTANT THINGS
+    --tasks-columns-amount: 1;
+
+    // GAPS
+    --tasks-gap: 16px;
+    --main-section-gap: 60px;
+
     // PADDING / OFFSET
     --site-padding-x: 100px;
     
@@ -37,7 +44,6 @@
     // ANIMATIONS 
     --transition-duration: 0.2s;
     --transition-duration-fast: 0.1s;
-
 
     // MEDIA 
     // @include tablet {  } 

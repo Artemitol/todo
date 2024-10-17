@@ -1,0 +1,1 @@
+export { getDataByBaseUrl } from "./main"

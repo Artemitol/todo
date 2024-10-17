@@ -1,0 +1,19 @@
+.tasksList {
+    display: grid;
+    grid-template-columns: repeat(var(--tasks-columns-amount), 1fr);
+    gap: var(--tasks-gap);
+    width: 100%;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    width: 100%;
+}
+
+.title {
+    font-size: 20px;
+    margin-bottom: 10px;
+}

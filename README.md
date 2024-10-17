@@ -47,3 +47,4 @@ I got a few steps of programming:
 4. Add jsconfig to the template repo
 5. fix paths (again XD)
 6. Look closely to the tsconfig vite config and all ts quick start things
+7. Add styles to the reset for svg colors in template repo

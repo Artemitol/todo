@@ -1,20 +1,18 @@
-import classes from "./task.module.scss"
 import { ReactNode, useState } from "react"
+import classes from "./task.module.scss"
+import { taskId, taskName, taskStructure } from "../model/model"
 
-interface TaskProps {
-    name: string,
-    children?: ReactNode
-}
+type taskProps = taskStructure & { children?: ReactNode }
 
 
-export function Task(props: TaskProps) {
+export function Task(props: taskProps) {
     const [data, setData] = useState({
+        taskId: props.id,
         name: props.name || "Task name",
-        // Can be "Completed"
         status: "in work",
         buttons: props.children || "here should be some buttons",
     })
-
+    
     return (
         <div className={classes.task}>
             <div className={classes.taskInner}>
