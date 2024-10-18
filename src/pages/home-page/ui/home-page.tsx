@@ -4,12 +4,12 @@ import { Input } from "@shared/ui/input-field"
 import { TasksList } from "@widgets/tasks-list"
 import { Button } from "@shared/ui/button"
 import { UsableTask } from "@widgets/usable-task"
-import { getTodos } from "@entities/task"
+import { getTodos, Task } from "@entities/task"
 import classes from "./home-page.module.scss"
-import { useEffect, useState } from "react"
+import { ReactNode, useEffect, useState } from "react"
 import { taskStructure } from "@entities/task"
 
-type homePageDataState = { todo: taskStructure[], completed: taskStructure[] }
+type homePageDataState = { todo: ReactNode[], completed: ReactNode[] }
 
 export function Homepage() {
     const [data, setData] = useState<homePageDataState>({
@@ -21,7 +21,12 @@ export function Homepage() {
         getTodos().then((todos) => {
             setData((prev) => ({
                 ...prev,
-                todo: [...todos]
+                todo: todos
+                    .filter((el) => el.status === "in work")
+                    .map((el) => <UsableTask key={el.taskId} task={el} />),
+                completed: todos
+                    .filter((el) => el.status === "Completed")
+                    .map((el) => <UsableTask key={el.taskId} task={el} />),
             }))
         })
     }, [])
@@ -34,21 +39,10 @@ export function Homepage() {
                 <Input placeholder="Add a new task" />
                 <Button />
                 <TasksList title="Todo">
-                    {data.todo.map((t: taskStructure) => (
-                        <UsableTask
-                            key={t.id}
-                            task={{ id: t.id, name: t.name, status: t.status }}
-                        />
-                    ))}
+                    {data.todo}
                 </TasksList>
                 <TasksList title="Completed">
-                    <UsableTask
-                        task={{
-                            id: 2,
-                            status: "Completed",
-                            name: "completed task",
-                        }}
-                    />
+                    {data.completed}
                 </TasksList>
             </Main>
             <footer className="footer"></footer>

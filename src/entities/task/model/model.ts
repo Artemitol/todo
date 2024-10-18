@@ -1,3 +1,5 @@
+import { ReactNode } from "react"
+
 export type taskId = number
 export type userId = number
 export type taskName = string
@@ -5,14 +7,8 @@ export type taskStatus = "in work" | "Completed"
 
 
 export type taskStructure = {
-    id: taskId,
+    taskId: taskId,
     name: taskName,
     status: taskStatus,
+    buttons?: ReactNode
 }
-
-// { JSON placeholder api: TODO`s
-//     "userId": 1,
-//     "id": 1,
-//     "title": "delectus aut autem",
-//     "completed": false
-//   },

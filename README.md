@@ -48,3 +48,8 @@ I got a few steps of programming:
 5. fix paths (again XD)
 6. Look closely to the tsconfig vite config and all ts quick start things
 7. Add styles to the reset for svg colors in template repo
+8. Add max amount of tasks
+> At this moment all tasks are at dom, but most part with css property 
+> ```css
+> display: "none"
+> ```

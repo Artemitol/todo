@@ -7,7 +7,7 @@ export const getTodos = async (): Promise<taskStructure[]> => {
         const data = await getDataByBaseUrl()
 
         const reformatedData: taskStructure[] = data.map((el) => ({
-            id: el.id,
+            taskId: el.id,
             name: el.title,
             status: el.completed ? "Completed" : "in work"
         })) 
