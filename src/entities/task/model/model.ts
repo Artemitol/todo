@@ -2,7 +2,7 @@ import { ReactNode } from "react"
 
 export type taskId = number
 export type userId = number
-export type taskName = string
+export type taskName = String
 export type taskStatus = "in work" | "Completed"
 
 

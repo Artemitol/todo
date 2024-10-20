@@ -1,15 +1,14 @@
 import { Header } from "@widgets/header"
 import { Main } from "@widgets/main"
 import { Input } from "@shared/ui/input-field"
-import { TasksList } from "@widgets/tasks-list"
 import { Button } from "@shared/ui/button"
+import { ItemsList } from "@widgets/items-list"
 import { UsableTask } from "@widgets/usable-task"
-import { getTodos, Task } from "@entities/task"
+import { getTodos } from "@entities/task"
+import { CreateTask } from "@features/create-task"
 import classes from "./home-page.module.scss"
-import { ReactNode, useEffect, useState } from "react"
-import { taskStructure } from "@entities/task"
-
-type homePageDataState = { todo: ReactNode[], completed: ReactNode[] }
+import { useEffect, useState } from "react"
+import { homePageDataState } from "../model/model"
 
 export function Homepage() {
     const [data, setData] = useState<homePageDataState>({
@@ -31,21 +30,24 @@ export function Homepage() {
         })
     }, [])
 
+    // TODO: refactor this state to the widget 
+    const [inputValue, setInputValue] = useState<String | null>(null)
+
     return (
         <div className={classes.homepage}>
             <div className={classes.background}></div>
             <Header />
             <Main>
-                <Input placeholder="Add a new task" />
+                <Input
+                    parrentLink={setInputValue}
+                    placeholder="Add a new task"
+                />
+                <CreateTask lastId={73} inputLink={inputValue} tasksListLink={setData} />
                 <Button />
-                <TasksList title="Todo">
-                    {data.todo}
-                </TasksList>
-                <TasksList title="Completed">
-                    {data.completed}
-                </TasksList>
+                <ItemsList title="Todo">{data.todo}</ItemsList>
+                <ItemsList title="Todo">{data.completed}</ItemsList>
             </Main>
             <footer className="footer"></footer>
-        </div>
+        </div> 
     )
 }

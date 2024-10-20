@@ -3,13 +3,13 @@ import classes from "./tasks-list.module.scss"
 
 
 
-type TodoAppProps = {
+type ItemsListProps = {
     title: tasksListTitle
     children?: React.ReactNode
 }
 
 
-export function TasksList(props: TodoAppProps) {
+export function ItemsList(props: ItemsListProps) {
     return (
         <div className={classes.container}>
             <span className={classes.title}>{props.title}</span>

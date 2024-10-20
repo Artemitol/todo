@@ -1,9 +1,13 @@
 import classes from "./button.module.scss"
 
+type ButtonProps = {
+    onClick?: () => void
+}
 
-export function Button() {
+
+export function Button(props: ButtonProps) {
     return (
-        <button className={classes.button}>
+        <button className={classes.button} onClick={props.onClick}>
             <svg
                 width="18"
                 height="18"
