@@ -6,7 +6,7 @@ import { Dispatch, ReactNode, SetStateAction } from "react";
 
 type CreateTaskProps = {
     lastId: number,
-    inputLink: String | null,
+    inputLink: string | null,
     tasksListLink: Dispatch<SetStateAction<homePageDataState>>
 }
 
@@ -19,5 +19,5 @@ export function CreateTask(props: CreateTaskProps) {
         }))
     }
 
-    return <Button />
+    return <Button onClick={onClickHandler}/>
 }

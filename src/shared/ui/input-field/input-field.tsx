@@ -1,7 +1,7 @@
 import { ChangeEvent, Dispatch, SetStateAction, useState } from "react"
 import classes from  "./input-field.module.scss"
 
-type data = Dispatch<SetStateAction<String | null>>
+type data = Dispatch<SetStateAction<string | null>>
 
 type InputProps = {
     placeholder?: string,

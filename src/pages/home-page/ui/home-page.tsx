@@ -30,8 +30,9 @@ export function Homepage() {
         })
     }, [])
 
-    // TODO: refactor this state to the widget 
-    const [inputValue, setInputValue] = useState<String | null>(null)
+    // TODO: refactor this state to the widget
+    const [inputValue, setInputValue] = useState<string | null>(null)
+    const [lastId, setLastId] = useState<number>(1)
 
     return (
         <div className={classes.homepage}>
@@ -42,12 +43,16 @@ export function Homepage() {
                     parrentLink={setInputValue}
                     placeholder="Add a new task"
                 />
-                <CreateTask lastId={73} inputLink={inputValue} tasksListLink={setData} />
+                <CreateTask
+                    lastId={lastId}
+                    inputLink={inputValue}
+                    tasksListLink={setData}
+                />
                 <Button />
                 <ItemsList title="Todo">{data.todo}</ItemsList>
                 <ItemsList title="Todo">{data.completed}</ItemsList>
             </Main>
             <footer className="footer"></footer>
-        </div> 
+        </div>
     )
 }

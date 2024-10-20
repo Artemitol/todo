@@ -1,8 +1,7 @@
-export type tasksListTitle = "Completed" | "Todo"
+export type itemsListTitle = "Completed" | "Todo"
 
 
 export type tasksList<T> = {
-    title: tasksListTitle,
-    items: T[],
-    
+    title: itemsListTitle
+    items: T[]
 }

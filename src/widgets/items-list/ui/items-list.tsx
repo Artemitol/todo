@@ -1,10 +1,10 @@
-import { tasksListTitle } from "../model/model"
-import classes from "./tasks-list.module.scss"
+import { itemsListTitle } from "../model/model"
+import classes from "./items-list.module.scss"
 
 
 
 type ItemsListProps = {
-    title: tasksListTitle
+    title: itemsListTitle
     children?: React.ReactNode
 }
 

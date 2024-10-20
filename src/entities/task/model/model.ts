@@ -1,14 +1,14 @@
 import { ReactNode } from "react"
 
-export type taskId = number
+export type taskId = number | "123"
 export type userId = number
-export type taskName = String
+export type taskName = string
 export type taskStatus = "in work" | "Completed"
 
 
 export type taskStructure = {
-    taskId: taskId,
-    name: taskName,
-    status: taskStatus,
+    taskId: taskId
+    name: taskName
+    status: taskStatus
     buttons?: ReactNode
 }
