@@ -12,10 +12,11 @@ export function Task(props: taskProps) {
         status: props.status,
         buttons: props.children || "here should be some buttons",
     })
-    
+    console.log(props)
     return (
         <div className={classes.task}>
             <div className={classes.taskInner}>
+                
                 <span
                     className={`${classes.name} ${
                         data.status === "Completed" ? classes.completed : null
@@ -28,7 +29,7 @@ export function Task(props: taskProps) {
                         data.status === "Completed" ? "hidden" : null
                     }`}
                 >
-                    {data.status === "Completed" ? data.buttons : null}
+                    {data.status === "Completed" ?  null : data.buttons}
                 </div>
             </div>
         </div>

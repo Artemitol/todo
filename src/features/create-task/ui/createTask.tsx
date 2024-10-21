@@ -1,11 +1,13 @@
+import { taskId } from "@entities/task";
 import { homePageDataState } from "@pages/home-page";
 import { Button } from "@shared/ui/button";
 import { UsableTask } from "@widgets/usable-task";
-import { Dispatch, ReactNode, SetStateAction } from "react";
+import { Dispatch, SetStateAction } from "react";
 
 
 type CreateTaskProps = {
-    lastId: number,
+    currentId: taskId,
+    setCurrentId: Dispatch<SetStateAction<taskId>>,
     inputLink: string | null,
     tasksListLink: Dispatch<SetStateAction<homePageDataState>>
 }
@@ -13,9 +15,21 @@ type CreateTaskProps = {
 
 export function CreateTask(props: CreateTaskProps) {
     function onClickHandler() {
+        const newId: taskId = props.currentId + 1
+        props.setCurrentId(newId)
         props.tasksListLink((prev) => ({
             ...prev,
-            todo: [...prev.todo, <UsableTask task={{taskId: props.lastId, name: props.inputLink || "No tast name", status: "in work"}}/>]
+            todo: [
+                ...prev.todo,
+                <UsableTask
+                    key={newId}
+                    task={{
+                        taskId: newId,
+                        name: props.inputLink || "No tast name",
+                        status: "in work",
+                    }}
+                />,
+            ],
         }))
     }
 

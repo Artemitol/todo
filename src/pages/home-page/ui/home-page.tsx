@@ -4,7 +4,7 @@ import { Input } from "@shared/ui/input-field"
 import { Button } from "@shared/ui/button"
 import { ItemsList } from "@widgets/items-list"
 import { UsableTask } from "@widgets/usable-task"
-import { getTodos } from "@entities/task"
+import { getTodos, taskId } from "@entities/task"
 import { CreateTask } from "@features/create-task"
 import classes from "./home-page.module.scss"
 import { useEffect, useState } from "react"
@@ -17,7 +17,10 @@ export function Homepage() {
     })
 
     useEffect(() => {
-        getTodos().then((todos) => {
+        getTodos(5).then((todos) => {
+            // Setting last id value from last element of requested array from API
+            setCurrentId(todos[todos.length - 1].taskId)
+            
             setData((prev) => ({
                 ...prev,
                 todo: todos
@@ -30,9 +33,9 @@ export function Homepage() {
         })
     }, [])
 
-    // TODO: refactor this state to the widget
+    // TODO: refactor this states to the widget
     const [inputValue, setInputValue] = useState<string | null>(null)
-    const [lastId, setLastId] = useState<number>(1)
+    const [currentId, setCurrentId] = useState<taskId>(1)
 
     return (
         <div className={classes.homepage}>
@@ -44,11 +47,11 @@ export function Homepage() {
                     placeholder="Add a new task"
                 />
                 <CreateTask
-                    lastId={lastId}
+                    currentId={currentId}
+                    setCurrentId={setCurrentId}
                     inputLink={inputValue}
                     tasksListLink={setData}
                 />
-                <Button />
                 <ItemsList title="Todo">{data.todo}</ItemsList>
                 <ItemsList title="Todo">{data.completed}</ItemsList>
             </Main>

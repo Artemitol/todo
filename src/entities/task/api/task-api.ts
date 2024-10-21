@@ -2,9 +2,9 @@ import { getDataByBaseUrl } from "@shared/api/todo";
 import { taskStructure } from "../model/model";
 
 
-export const getTodos = async (): Promise<taskStructure[]> => {
+export const getTodos = async (limit: number): Promise<taskStructure[]> => {
     try {
-        const data = await getDataByBaseUrl()
+        const data = await getDataByBaseUrl(limit)
 
         const reformatedData: taskStructure[] = data.map((el) => ({
             taskId: el.id,

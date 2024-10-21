@@ -1,15 +1,16 @@
 import { taskId } from "@entities/task/model/model"
 import { Trashcan } from "@shared/ui/trashcan"
 import classes from "./remove-task.module.scss"
-import { useState } from "react"
+import { Dispatch, SetStateAction, useState } from "react"
+import { homePageDataState } from "@pages/home-page"
+
+
 
 interface removeTaskProps {
-    taskId: taskId
+    taskId: taskId,
 }
 
 export function RemoveTask(props: removeTaskProps) {
-    const [task, setTask] = useState(props.taskId)
-
     function removeClickHandle() {
         
     }

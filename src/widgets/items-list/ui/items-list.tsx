@@ -1,11 +1,11 @@
 import { itemsListTitle } from "../model/model"
 import classes from "./items-list.module.scss"
-
+import { ReactNode } from "react"
 
 
 type ItemsListProps = {
     title: itemsListTitle
-    children?: React.ReactNode
+    children?: ReactNode
 }
 
 

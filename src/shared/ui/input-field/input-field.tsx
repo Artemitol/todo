@@ -12,8 +12,11 @@ type InputProps = {
 
 export function Input(props: InputProps) {
     function onChangeHandler(e: ChangeEvent<HTMLInputElement>) {
-        if (props.parrentLink)
-            props.parrentLink(e.target.value)
+        if (props.parrentLink){
+            const newValue = e.target.value
+
+            props.parrentLink(newValue === "" ? null : newValue)
+        }
     }
 
     return (
