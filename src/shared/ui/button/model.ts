@@ -1,0 +1,1 @@
+type buttonType = "button" | "formInput"
