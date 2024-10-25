@@ -39,10 +39,7 @@ export function CreateTask(props: CreateTaskProps & HTMLAttributes<HTMLButtonEle
     }
 
     useEffect(() => {
-        if (callFlag) {
-            onClickHandler()
-            console.log("Clicked")
-        }
+        callFlag && onClickHandler()
     }, [callFlag])
 
     return <Button onClick={onClickHandler} />

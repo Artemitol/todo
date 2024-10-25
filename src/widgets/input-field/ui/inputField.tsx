@@ -18,15 +18,11 @@ export function InputField(props: inputFieldProps) {
     const [inputValue, setInputValue] = useState<string | null>(null)
 
     const keyDownHandler: KeyboardEventHandler<HTMLDivElement> = (e) => {
-        if (e.key=="Enter") {
-            setCallFlag(true)
-        }
+        e.key=="Enter" && setCallFlag(true)
     }
 
     useEffect(() => {
-        if (callFlag) {
-            setCallFlag(false)
-        }
+        callFlag && setCallFlag(false)
     }, [callFlag])
 
     return (
