@@ -1,13 +1,13 @@
 import { taskId } from "@entities/task/model/model"
 import { Trashcan } from "@shared/ui/trashcan"
 import classes from "./remove-task.module.scss"
-import { Dispatch, SetStateAction, useState } from "react"
-import { homePageDataState } from "@pages/home-page"
+import { Dispatch, ReactNode, SetStateAction, useState } from "react"
 
 
 
-interface removeTaskProps {
+type removeTaskProps = {
     taskId: taskId,
+    tasksListLink: Dispatch<SetStateAction<Array<any>>>
 }
 
 export function RemoveTask(props: removeTaskProps) {

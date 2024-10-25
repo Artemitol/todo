@@ -25,10 +25,10 @@ export function Homepage() {
                 ...prev,
                 todo: todos
                     .filter((el) => el.status === "in work")
-                    .map((el) => <UsableTask key={el.taskId} task={el} />),
+                    .map((el) => <UsableTask key={el.taskId} task={el} tasksListLink={setData} />),
                 completed: todos
                     .filter((el) => el.status === "Completed")
-                    .map((el) => <UsableTask key={el.taskId} task={el} />),
+                    .map((el) => <UsableTask key={el.taskId} task={el} tasksListLink={setData} />),
             }))
         })
     }, [])

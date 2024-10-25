@@ -22,6 +22,7 @@ export function CreateTask(props: CreateTaskProps) {
             todo: [
                 ...prev.todo,
                 <UsableTask
+                    tasksListLink={props.tasksListLink}
                     key={newId}
                     task={{
                         taskId: newId,
