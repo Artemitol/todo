@@ -28,6 +28,8 @@ I got a few steps of programming:
 > Practice solve any problem
 * Tyred facing stupid js problems
 > At this moment started learning Typescript 
+* I don`t know how to pass pages state model to the lower slices
+> Now i got problems with ts in FSD architecture) I faced this problem because i am using global states, where is chillin my tasks. I want to pass this state to the children, but i cant do it, because in FSD i cant pass model from `page` to the `featue`, because feature is lower then page.
 
 ### New knowledges in different technologies
 * Aliasses support in intelisense

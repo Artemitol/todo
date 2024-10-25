@@ -14,4 +14,8 @@
         transition-duration: var(--transition-duration-fast);
         background-color: var(--color-main);
     }
+
+    &:focus-visible {
+        outline: var(--border-focus);
+    }
 }

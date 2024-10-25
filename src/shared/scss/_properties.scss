@@ -4,6 +4,7 @@
     --color-background-alt: #15101C;
     --color-main: #3E1671;
     --color-accent: #9E78CF;
+    --color-focus: #8E8A57;
     --color-text: #9E78CF;
     --color-text-main: #FFFFFF;
     --color-completed: #78CFB0;
@@ -39,6 +40,7 @@
     // DECORATIONS
     --border: 1px solid var(--color-main);
     --border-active: 1px solid var(--color-accent);
+    --border-focus: 2px dashed var(--color-focus);
     --box-shadow: 1 1 var(--color-dark);
     --border-radius: 10px;
 
