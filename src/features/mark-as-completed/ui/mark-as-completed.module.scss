@@ -1,0 +1,17 @@
+.markAsCompleted {
+    width: var(--button-width);
+    aspect-ratio: 1;
+    color: var(--color-main);
+    background: transparent;
+    outline: none;
+    border: none;
+
+    &:focus-visible {
+        outline: var(--border-focus);
+    }
+
+    @include hover {
+        transition-duration: var(--transition-duration-fast);
+        color: var(--color-text);
+    }
+}

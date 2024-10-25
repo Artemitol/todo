@@ -1,5 +1,6 @@
 import { Task, taskStructure } from "@entities/task";
 import { RemoveTask } from "@features/remove-task";
+import { MarkAsCompleted } from "@features/mark-as-completed";
 import { Dispatch, SetStateAction } from "react";
 
 type usableTaskProps = {
@@ -16,6 +17,7 @@ export function UsableTask(props: usableTaskProps) {
                 taskId={task.taskId}
                 globalTasksState={props.tasksListLink}
             />
+            <MarkAsCompleted />
         </Task>
     )
 }
