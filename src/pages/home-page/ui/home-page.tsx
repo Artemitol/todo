@@ -1,10 +1,8 @@
 import { Header } from "@widgets/header"
 import { Main } from "@widgets/main"
-import { Input } from "@shared/ui/input-field"
 import { ItemsList } from "@widgets/items-list"
 import { UsableTask } from "@widgets/usable-task"
 import { getTodos, taskId } from "@entities/task"
-import { CreateTask } from "@features/create-task"
 import { InputField } from "@widgets/input-field"
 import classes from "./home-page.module.scss"
 import { useEffect, useState } from "react"
@@ -52,7 +50,11 @@ export function Homepage() {
             <div className={classes.background}></div>
             <Header />
             <Main>
-                <InputField currId={currentId} setCurrId={setCurrentId} setGlobalState={setData}/>
+                <InputField
+                    currId={currentId}
+                    setCurrId={setCurrentId}
+                    setGlobalState={setData}
+                />
                 <ItemsList title="Todo">{data.todo}</ItemsList>
                 <ItemsList title="Todo">{data.completed}</ItemsList>
             </Main>

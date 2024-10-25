@@ -14,7 +14,7 @@ export function UsableTask(props: usableTaskProps) {
         <Task {...task}>
             <RemoveTask
                 taskId={task.taskId}
-                tasksListLink={props.tasksListLink}
+                globalTasksState={props.tasksListLink}
             />
         </Task>
     )
