@@ -1,16 +1,16 @@
-import { ChangeEvent, Dispatch, SetStateAction, useState } from "react"
+import { ChangeEvent, Dispatch, SetStateAction, HTMLAttributes } from "react"
 import classes from  "./input-field.module.scss"
 
 type data = Dispatch<SetStateAction<string | null>>
 
 type InputProps = {
-    placeholder?: string,
+    placeholder?: string
     // This prop helps to link input value with some parrent state
-    parrentLink?: data,
+    parrentLink?: data
 }
 
 
-export function Input(props: InputProps) {
+export function Input(props: InputProps & HTMLAttributes<HTMLInputElement>) {
     function onChangeHandler(e: ChangeEvent<HTMLInputElement>) {
         if (props.parrentLink){
             const newValue = e.target.value

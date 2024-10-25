@@ -2,7 +2,7 @@ import { taskId } from "@entities/task";
 import { homePageDataState } from "@pages/home-page";
 import { Button } from "@shared/ui/button";
 import { UsableTask } from "@widgets/usable-task";
-import { Dispatch, SetStateAction } from "react";
+import { Dispatch, HTMLAttributes, SetStateAction } from "react";
 
 
 type CreateTaskProps = {
@@ -13,20 +13,22 @@ type CreateTaskProps = {
 }
 
 
-export function CreateTask(props: CreateTaskProps) {
+export function CreateTask(props: CreateTaskProps & HTMLAttributes<HTMLButtonElement>) {
+    const { currentId, setCurrentId, tasksListLink, inputLink, ...rest } = props
+    console.log(props)
     function onClickHandler() {
-        const newId: taskId = props.currentId + 1
-        props.setCurrentId(newId)
-        props.tasksListLink((prev) => ({
+        const newId: taskId = currentId + 1
+        setCurrentId(newId)
+        tasksListLink((prev) => ({
             ...prev,
             todo: [
                 ...prev.todo,
                 <UsableTask
-                    tasksListLink={props.tasksListLink}
+                    tasksListLink={tasksListLink}
                     key={newId}
                     task={{
                         taskId: newId,
-                        name: props.inputLink || "No tast name",
+                        name: inputLink || "No tast name",
                         status: "in work",
                     }}
                 />,
@@ -34,5 +36,5 @@ export function CreateTask(props: CreateTaskProps) {
         }))
     }
 
-    return <Button onClick={onClickHandler}/>
+    return <Button onClick={onClickHandler} {...rest}/>
 }

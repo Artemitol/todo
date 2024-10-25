@@ -1,3 +1,4 @@
+import { HTMLAttributes } from "react"
 import classes from "./button.module.scss"
 
 type ButtonProps = {
@@ -5,7 +6,7 @@ type ButtonProps = {
 }
 
 
-export function Button(props: ButtonProps) {
+export function Button(props: ButtonProps & HTMLAttributes<HTMLButtonElement>) {
     return (
         <button className={classes.button} onClick={props.onClick}>
             <svg

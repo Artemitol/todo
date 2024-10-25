@@ -14,17 +14,29 @@ type inputFieldProps = {
 
 
 export function InputField(props: inputFieldProps) {
+    const [] = useState(null)
     const [inputValue, setInputValue] = useState<string | null>(null)
 
+    function focusHandler() {
+        setInputValue("")   
+    }
+
+    function keyDownHandler(e: KeyboardEvent) {
+        if (e.key === "Enter") {
+            setInputValue("")
+        }
+    }
+
     return (
-        <div className={classes.inputField}>
-            <Input parrentLink={setInputValue} placeholder="Add a new task" />
+        <form className={classes.inputField}>
+            <Input parrentLink={setInputValue} placeholder="Add a new task"/>
             <CreateTask
                 currentId={props.currId}
                 setCurrentId={props.setCurrId}
                 inputLink={inputValue}
                 tasksListLink={props.setGlobalState}
+                style={{backgroundColor: "transparent"}}
             />
-        </div>
+        </form>
     )
 }
