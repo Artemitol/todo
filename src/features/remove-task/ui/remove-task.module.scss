@@ -1,4 +1,6 @@
 .removeButton {
+    width: var(--button-width);
+    aspect-ratio: 1;
     color: var(--color-main);
     background: transparent;
     outline: none;

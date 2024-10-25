@@ -1,7 +1,7 @@
 .task {
     padding: 22px;
     height: 75px;
-    width: 100%;
+    width: 500px;
     background-color: var(--color-background-alt);
     border-radius: var(--border-radius);
 
@@ -22,10 +22,14 @@
     flex-direction: row;
     justify-content: start;
     align-items: center;
-    flex-wrap: wrap;
+    width: fit-content;
 }
 
 .name {
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
     color: var(--color-accent);
     font-size: 16px;
 }

@@ -5,6 +5,7 @@
     gap: var(--tasks-gap);
     overflow: hidden;
     width: 100%;
+    max-width: var(--main-width);
 
     div:nth-child(n+#{$tasks-max-rows-amount}) {
         display: none;
