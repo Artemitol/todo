@@ -11,12 +11,8 @@
         user-select: none;
     }
 
-    &:focus{
+    &:focus-visible{
         border: var(--border-active);
         outline: none;
     }   
-
-    &:focus-visible {
-        outline: var(--border-focus);
-    }
 }

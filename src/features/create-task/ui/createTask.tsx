@@ -15,8 +15,9 @@ type CreateTaskProps = {
 
 
 export function CreateTask(props: CreateTaskProps & HTMLAttributes<HTMLButtonElement>) {
-    const { currentId, setCurrentId, tasksListLink, inputLink, callFlag } = props
-    console.log(props)
+    const { currentId, setCurrentId, tasksListLink, inputLink, callFlag } =
+        props
+
     function onClickHandler() {
         const newId: taskId = currentId + 1
         setCurrentId(newId)
@@ -38,12 +39,11 @@ export function CreateTask(props: CreateTaskProps & HTMLAttributes<HTMLButtonEle
     }
 
     useEffect(() => {
-        console.log(callFlag)
         if (callFlag) {
             onClickHandler()
             console.log("Clicked")
         }
     }, [callFlag])
 
-    return <Button onClick={onClickHandler}/>
+    return <Button onClick={onClickHandler} />
 }
