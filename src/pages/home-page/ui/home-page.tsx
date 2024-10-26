@@ -13,6 +13,7 @@ export function Homepage() {
         todo: [],
         completed: [],
     })
+    const [currentId, setCurrentId] = useState<taskId>(1)
 
     useEffect(() => {
         getTodos(2).then((todos) => {
@@ -42,8 +43,6 @@ export function Homepage() {
             }))
         })
     }, [])
-
-    const [currentId, setCurrentId] = useState<taskId>(1)
 
     return (
         <div className={classes.homepage}>
