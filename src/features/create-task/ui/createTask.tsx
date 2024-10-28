@@ -19,23 +19,25 @@ export function CreateTask(props: CreateTaskProps & HTMLAttributes<HTMLButtonEle
         props
 
     function onClickHandler() {
-        const newId: taskId = currentId + 1
-        setCurrentId(newId)
-        tasksListLink((prev) => ({
-            ...prev,
-            todo: [
-                ...prev.todo,
-                <UsableTask
-                    tasksListLink={tasksListLink}
-                    key={newId}
-                    task={{
-                        taskId: newId,
-                        name: inputLink || "No tast name",
-                        status: "in work",
-                    }}
-                />,
-            ],
-        }))
+        if (inputLink) {
+            const newId: taskId = currentId + 1
+            setCurrentId(newId)
+            tasksListLink((prev) => ({
+                ...prev,
+                todo: [
+                    ...prev.todo,
+                    <UsableTask
+                        tasksListLink={tasksListLink}
+                        key={newId}
+                        task={{
+                            taskId: newId,
+                            name: inputLink || "No tast name",
+                            status: "in work",
+                        }}
+                    />,
+                ],
+            }))
+        }
     }
 
     useEffect(() => {
