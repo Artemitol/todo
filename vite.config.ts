@@ -14,6 +14,9 @@ const envSchema = z.object({
 export default defineConfig(({mode}) => {
     return {
         plugins: [react()],
+        server: {
+            port: 8080,
+        },
         resolve: {
             alias: {
                 "@scss": path.resolve("src/shared/scss"),
